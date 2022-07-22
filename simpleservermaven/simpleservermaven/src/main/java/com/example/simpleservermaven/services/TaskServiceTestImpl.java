@@ -8,15 +8,15 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class TaskServiceImpl implements TaskService {
+public class TaskServiceTestImpl implements TaskService {
 
     private List<Task> taskList;
 
-    public TaskServiceImpl() {
+    public TaskServiceTestImpl() {
         taskList = new ArrayList<>();
-        taskList.add(new Task(1, "sample task", false, new Date()));
-        taskList.add(new Task(2, "sample task", false, new Date()));
-        taskList.add(new Task(3, "sample task", false, new Date()));
+        taskList.add(new Task(1, "test sample task", false, new Date()));
+        taskList.add(new Task(2, "test sample task", false, new Date()));
+        taskList.add(new Task(3, "test sample task", false, new Date()));
 
     }
     @Override
@@ -26,7 +26,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task getTaskById(Integer id) {
-        return findTaskById(id);
+        return null;
     }
 
     @Override
@@ -41,14 +41,6 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(int id) {
-        taskList.remove(findTaskById(id));
-    }
-
-    private Task findTaskById(int id) {
-        for (Task task : taskList) {
-            if (task.getId() == id) return task;
-        }
-
-        throw new TaskNotFoundException(id);
+        return;
     }
 }
