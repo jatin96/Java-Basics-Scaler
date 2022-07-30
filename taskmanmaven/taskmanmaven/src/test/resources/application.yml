@@ -1,0 +1,12 @@
+server:
+  port: 8989
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create # in dev create, in prod this should be update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql=true:
+  datasource:
+    url: jdbc:h2:file:./test_app
