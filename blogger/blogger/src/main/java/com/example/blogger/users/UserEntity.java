@@ -1,5 +1,6 @@
 package com.example.blogger.users;
 
+import com.example.blogger.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,15 +12,21 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Entity(name = "users")
-public class UserEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "id", nullable = false)
-	private Long id;
+public class UserEntity extends BaseEntity {
 
-	private String createdAt;
+	@Column(nullable = false, unique = true)
+	@NonNull
+	private String email;
+
+	@Column(nullable = false, unique = true)
+	@NonNull
+	private String username;
+
+	@Column(nullable = false)
+	@NonNull
+	private String password;
+
 	private String bio;
 	private String avatar;
-	private String email;
-	private String username;
+
 }
