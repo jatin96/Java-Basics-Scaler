@@ -29,4 +29,11 @@ public class UserDTO {
         private String token;
     }
 
+    @Data
+    public static class GetUserResponse {
+        private Long id;
+        private String username;
+        private String bio;
+    }
+
 }

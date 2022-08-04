@@ -41,6 +41,16 @@ public class UserService {
         }
     }
 
+    public UserDTO.GetUserResponse getUserByUsername(String username) {
+        UserEntity userEntity = usersRepository.findByUsername(username).orElseThrow(
+                () -> new UserNotFoundException(username)
+        );
+
+        return modelMapper.map(userEntity, UserDTO.GetUserResponse.class);
+    }
+
+
+
     static class UserAlreadyExistsException extends RuntimeException {
         public UserAlreadyExistsException(String message) {
             super(message);

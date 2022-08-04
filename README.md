@@ -573,6 +573,44 @@ If you don't want your username to be visible to outside world, you can encrypt 
 Read from here : [Click Here](https://securityzines.com/zines/csrf.html)
 
 
+## Libraries for JWT Tokens
+
+You can use auth0 library for JWT. Add maven dependency.
+
+```xml
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+```
+
+## Library for security like if you need to add token verification security for api calls
+
+```xml
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.7.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<version>5.7.2</version>
+			<scope>test</scope>
+		</dependency>
+```
+
+
+
 
 
 

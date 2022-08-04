@@ -31,6 +31,13 @@ public class UsersController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/@{username}", produces = "application/json")
+    ResponseEntity<UserDTO.GetUserResponse> getUser(@PathVariable("username") String username) {
+
+        UserDTO.GetUserResponse response = userService.getUserByUsername(username);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @ExceptionHandler
     ResponseEntity<ErrorDTO> exceptionHandler(Exception e) {
         if (e instanceof UserService.UserNotFoundException) {
